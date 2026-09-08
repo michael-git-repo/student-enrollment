@@ -12,12 +12,22 @@ export default function Home() {
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
 
-  async function loadStudents() {
-    const response = await fetch("/api/enrollments", { cache: "no-store" });
-    const data = await response.json();
-    if (response.ok) setStudents(data.enrollments);
-  }
-  useEffect(() => { void loadStudents(); }, []);
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch("/api/enrollments", { cache: "no-store" })
+      .then(async (response) => ({ response, data: await response.json() }))
+      .then(({ response, data }) => {
+        if (!cancelled && response.ok) setStudents(data.enrollments);
+      })
+      .catch(() => {
+        if (!cancelled) setError("Unable to load enrolled students.");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setSaving(true); setError(""); setMessage("");
