@@ -3,7 +3,16 @@ import { parseEnrollment } from "./validation";
 
 describe("enrollment validation", () => {
   it("normalizes valid input", () => {
-    const result = parseEnrollment({ firstName: "Ada", lastName: "Lovelace", email: "ADA@EXAMPLE.COM", dateOfBirth: "1815-12-10", course: "Computing", phone: "123456789", address: "1 Analytical Engine Way" });
+    const result = parseEnrollment({
+      firstName: "Ada",
+      lastName: "Lovelace",
+      sex: "Female",
+      email: "ADA@EXAMPLE.COM",
+      dateOfBirth: "1815-12-10",
+      course: "Computing",
+      phone: "123456789",
+      address: "1 Analytical Engine Way",
+    });
     expect(result.email).toBe("ada@example.com");
   });
 

@@ -88,7 +88,7 @@ export default function Home() {
     pdf.save("student-enrollments.pdf");
   }
 
-  return <main className="mx-auto min-h-screen max-w-[1400px] px-5 py-6 sm:px-8 sm:py-10">
+  return <main className="mx-auto min-h-screen max-w-[1120px] px-5 py-6 sm:px-8 sm:py-10">
     <header className="mb-8 flex items-start gap-4 sm:mb-10">
       <div className="brand-mark">ME</div>
       <div>
@@ -101,7 +101,7 @@ export default function Home() {
     <div className="notice mb-8"><span className="notice-icon">!</span><p><strong>Demo warning:</strong> this first version has no login and is for synthetic data only. Do not enter real student information.</p></div>
 
     <div className="stacked-layout">
-      <aside className="panel side-panel">
+      <aside className="panel form-panel">
         <form onSubmit={submit}>
           <div className="mb-6">
             <p className="section-kicker">New record</p>
@@ -136,7 +136,7 @@ export default function Home() {
         </form>
       </aside>
 
-      <section className="panel main-panel">
+      <section className="panel register-panel">
         <div className="main-header">
           <div>
             <p className="section-kicker">Student register</p>

@@ -31,9 +31,9 @@ button, input, textarea { font: inherit; }
 .empty-state { border: 1px dashed #cbd5e1; border-radius: 0.9rem; background: rgba(248, 250, 252, 0.7); padding: 1.2rem; color: #64748b; }
 .student-card { border: 1px solid #e2e8f0; border-radius: 1rem; background: rgba(255, 255, 255, 0.7); padding: 1rem; transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease; }
 .student-card:hover { border-color: #b9c9f8; box-shadow: 0 10px 25px rgba(65, 83, 130, 0.08); transform: translateY(-1px); }
-.app-shell { display: grid; gap: 1.5rem; grid-template-columns: minmax(280px, 420px) minmax(0, 1fr); align-items: start; }
-.side-panel { padding: 1.5rem; }
-.main-panel { padding: 1.5rem; }
+.stacked-layout { display: grid; gap: 1.5rem; }
+.form-panel { padding: 1.5rem; }
+.register-panel { padding: 1.5rem; }
 .side-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .field-full { grid-column: 1 / -1; }
 .side-title { margin-top: 0.2rem; font-size: clamp(2rem, 3vw, 3rem); line-height: 1; letter-spacing: -0.06em; font-weight: 900; color: #0f172a; }
