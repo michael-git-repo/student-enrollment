@@ -13,7 +13,7 @@ This platform centralizes the process into a simple web form that:
 - saves data to a backend data store,
 - shows a live student register,
 - allows exports to CSV, Excel, and PDF.
-
+---
 ## 2. Problem the project is solving
 
 Before this system, managing student enrollment could be slow and error-prone because records were stored in disconnected places and manual data entry often caused incomplete or inconsistent information.
@@ -26,7 +26,7 @@ This project addresses that by creating:
 - centralized storage with DynamoDB,
 - a table view of enrolled students,
 - downloadable reports for administration.
-
+---
 ## 3. Main features
 
 - Student enrollment form
@@ -38,7 +38,7 @@ This project addresses that by creating:
 - Docker-based containerization
 - Infrastructure as Code with Terraform
 - CI/CD deployment through GitHub Actions
-
+---
 ## 4. Tools and technologies used
 
 ### Frontend
@@ -46,12 +46,12 @@ This project addresses that by creating:
 - React 19
 - TypeScript
 - Tailwind CSS
-
+---
 ### Backend and validation
 - Zod for schema validation
 - Next.js API routes
 - AWS DynamoDB for persistence
-
+---
 ### Deployment and infrastructure
 - Docker
 - Amazon ECR
@@ -60,12 +60,12 @@ This project addresses that by creating:
 - Terraform
 - GitHub Actions
 - AWS CloudWatch
-
+---
 ### Testing and reporting
 - Vitest
 - xlsx for Excel export
 - jsPDF and jsPDF AutoTable for PDF export
-
+---
 ## 5. Project structure
 
 ```text
@@ -105,7 +105,7 @@ student-enrollment/
 ├── vitest.config.ts
 └── ...
 ```
-
+---
 ### Key files
 
 - `src/app/page.tsx` — main student enrollment page and UI
@@ -116,7 +116,7 @@ student-enrollment/
 - `infra/main.tf` — AWS infrastructure definition
 - `.github/workflows/*.yml` — deployment automation and CI checks
 - `Dockerfile` — container image for the application
-
+---
 ## 6. How the system works
 
 1. A user opens the enrollment page.
@@ -125,7 +125,7 @@ student-enrollment/
 4. The backend stores the student record in DynamoDB.
 5. The page refreshes the student register and displays the latest records.
 6. The user can download the list as CSV, Excel, or PDF.
-
+---
 ## 7. How to access the project
 
 ### Local access
@@ -150,7 +150,7 @@ The project is deployed to AWS and can be accessed through the live application 
 ```text
 http://student-enrollment-dev-1658490077.us-east-1.elb.amazonaws.com/
 ```
-
+---
 ## 8. How to use the tool
 
 1. Open the app in a browser.
@@ -159,11 +159,12 @@ http://student-enrollment-dev-1658490077.us-east-1.elb.amazonaws.com/
 4. Click the enrollment button.
 5. The record appears in the register table below.
 6. Use the CSV, Excel, or PDF buttons to export the student list.
-
+---
 ## 9. Notes and warnings
 
 This is a demo project and should not be used with real student data unless security and privacy controls are added. The application currently focuses on the enrollment workflow and does not yet include full authentication, role-based access, or advanced data protection controls.
-
+---
 ## 10. Summary
 
 This project demonstrates how to build and deploy a functional student enrollment system using modern web technologies and cloud infrastructure. It combines frontend UI, backend API logic, validation, database storage, and automated AWS deployment into one complete solution.
+---
