@@ -57,7 +57,7 @@ resource "aws_cloudwatch_log_group" "app" {
 }
 
 resource "aws_iam_role" "task_execution" {
-  name               = "${var.project_name}-${var.environment}-execution"
+  name = "${var.project_name}-${var.environment}-execution"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -78,7 +78,7 @@ resource "aws_iam_role_policy_attachment" "execution" {
 }
 
 resource "aws_iam_role" "task" {
-  name               = "${var.project_name}-${var.environment}-task"
+  name = "${var.project_name}-${var.environment}-task"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
