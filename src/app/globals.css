@@ -17,9 +17,11 @@ button, input, textarea { font: inherit; }
 .panel { border: 1px solid rgba(255, 255, 255, 0.8); background: rgba(255, 255, 255, 0.82); box-shadow: 0 18px 50px rgba(44, 62, 104, 0.1); backdrop-filter: blur(14px); }
 .section-kicker { color: #315efb; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
 .step-badge, .count-badge { border-radius: 999px; background: #eef3ff; color: #315efb; font-size: 0.75rem; font-weight: 800; padding: 0.45rem 0.7rem; }
-.field-label { display: grid; gap: 0.4rem; color: #334155; font-size: 0.85rem; font-weight: 700; }
-.field-input { width: 100%; border: 1px solid #d8e0ef; border-radius: 0.8rem; background: rgba(248, 250, 255, 0.8); padding: 0.72rem 0.85rem; color: #172033; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease; }
+.field-label { display: grid; gap: 0.45rem; color: #334155; font-size: 0.9rem; font-weight: 700; }
+.field-label span { display: block; }
+.field-input { width: 100%; border: 1px solid #d7dfef; border-radius: 0.8rem; background: rgba(248, 250, 255, 0.8); padding: 0.72rem 0.85rem; color: #172033; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease; }
 .field-input:focus { border-color: #5278f6; background: white; box-shadow: 0 0 0 4px rgba(49, 94, 251, 0.12); }
+.field-select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #4b5563 50%), linear-gradient(135deg, #4b5563 50%, transparent 50%); background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 12px) calc(50% - 2px); background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; }
 .submit-button { display: flex; align-items: center; justify-content: center; gap: 0.7rem; border: 0; border-radius: 0.8rem; background: linear-gradient(135deg, #315efb, #6048d9); padding: 0.85rem 1rem; color: white; font-weight: 800; box-shadow: 0 10px 20px rgba(49, 94, 251, 0.25); transition: transform 160ms ease, box-shadow 160ms ease; }
 .submit-button:hover { transform: translateY(-1px); box-shadow: 0 14px 24px rgba(49, 94, 251, 0.32); }
 .submit-button:disabled { cursor: wait; opacity: 0.6; transform: none; }
@@ -29,7 +31,16 @@ button, input, textarea { font: inherit; }
 .empty-state { border: 1px dashed #cbd5e1; border-radius: 0.9rem; background: rgba(248, 250, 252, 0.7); padding: 1.2rem; color: #64748b; }
 .student-card { border: 1px solid #e2e8f0; border-radius: 1rem; background: rgba(255, 255, 255, 0.7); padding: 1rem; transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease; }
 .student-card:hover { border-color: #b9c9f8; box-shadow: 0 10px 25px rgba(65, 83, 130, 0.08); transform: translateY(-1px); }
-.table-wrap { overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 1rem; background: rgba(255, 255, 255, 0.7); }
+.app-shell { display: grid; gap: 1.5rem; grid-template-columns: minmax(280px, 420px) minmax(0, 1fr); align-items: start; }
+.side-panel { padding: 1.5rem; }
+.main-panel { padding: 1.5rem; }
+.side-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.field-full { grid-column: 1 / -1; }
+.side-title { margin-top: 0.2rem; font-size: clamp(2rem, 3vw, 3rem); line-height: 1; letter-spacing: -0.06em; font-weight: 900; color: #0f172a; }
+.main-title { margin-top: 0.2rem; font-size: clamp(2.2rem, 3vw, 3.2rem); line-height: 1.05; letter-spacing: -0.06em; font-weight: 900; color: #0f172a; }
+.main-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+.main-actions { display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem; flex-wrap: wrap; }
+.table-wrap { overflow-x: auto; border: 1px solid #dfe7f5; border-radius: 1rem; background: rgba(255, 255, 255, 0.7); }
 .student-table { width: 100%; min-width: 980px; border-collapse: collapse; color: #475569; font-size: 0.78rem; text-align: left; }
 .student-table th { background: #f5f7ff; color: #64748b; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; padding: 0.85rem 0.9rem; text-transform: uppercase; white-space: nowrap; }
 .student-table td { border-top: 1px solid #e8edf5; padding: 0.9rem; white-space: nowrap; }

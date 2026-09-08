@@ -3,6 +3,7 @@ import { z } from "zod";
 export const enrollmentSchema = z.object({
   firstName: z.string().trim().min(2, "First name must be at least 2 characters.").max(80),
   lastName: z.string().trim().min(2, "Last name must be at least 2 characters.").max(80),
+  sex: z.enum(["Female", "Male", "Other", "Prefer not to say"], { message: "Select a sex." }),
   email: z.string().trim().email("Enter a valid email address.").max(160).transform((value) => value.toLowerCase()),
   dateOfBirth: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Enter a valid date of birth."),
   course: z.string().trim().min(2, "Course or program is required.").max(120),
