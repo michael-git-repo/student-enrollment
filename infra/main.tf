@@ -60,13 +60,15 @@ resource "aws_iam_role" "task_execution" {
   name               = "${var.project_name}-${var.environment}-execution"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
-    Statement = [{
-      Effect = "Allow"
-      Principal = {
-        Service = "ecs-tasks.amazonaws.com"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Service = "ecs-tasks.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
       }
-      Action = "sts:AssumeRole"
-    }]
+    ]
   })
 }
 
@@ -79,13 +81,15 @@ resource "aws_iam_role" "task" {
   name               = "${var.project_name}-${var.environment}-task"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
-    Statement = [{
-      Effect = "Allow"
-      Principal = {
-        Service = "ecs-tasks.amazonaws.com"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Service = "ecs-tasks.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
       }
-      Action = "sts:AssumeRole"
-    }]
+    ]
   })
 }
 
@@ -93,11 +97,13 @@ resource "aws_iam_role_policy" "dynamodb" {
   role = aws_iam_role.task.id
   policy = jsonencode({
     Version = "2012-10-17"
-    Statement = [{
-      Effect   = "Allow"
-      Action   = ["dynamodb:PutItem", "dynamodb:Scan"]
-      Resource = aws_dynamodb_table.enrollments.arn
-    }]
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = ["dynamodb:PutItem", "dynamodb:Scan"]
+        Resource = aws_dynamodb_table.enrollments.arn
+      }
+    ]
   })
 }
 
